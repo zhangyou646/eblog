@@ -1,89 +1,238 @@
-<div align="center">
+# Ananke, A theme for [Hugo](http://gohugo.io/), a framework for building websites.
 
-<h1><a href="https://gethugothemes.com/products/hugo-documentation-theme/">Dot Hugo Documentation Theme [Version : 2.0]</a></h1>
+The intent of this theme is to provide a solid starting place for Hugo sites with basic features and include best practices for performance, accessibility, and rapid development.
 
-<p><a href="https://github.com/themefisher/dot-hugo-documentation-theme/stargazers"><img src="https://camo.githubusercontent.com/7d6b302902df5eaa1a880850777f6cbc089abc5b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f7468656d656669736865722f646f742d6875676f2d646f63756d656e746174696f6e2d7468656d652e737667" alt="GitHub stars" data-canonical-src="https://img.shields.io/github/stars/themefisher/dot-hugo-documentation-theme.svg" style="max-width:100%;"></a>
-<a href="https://github.com/themefisher/dot-hugo-documentation-theme/issues"><img src="https://camo.githubusercontent.com/82ea79e787e3159369049285257d62b85e2c0d35/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f7468656d656669736865722f646f742d6875676f2d646f63756d656e746174696f6e2d7468656d652e737667" alt="GitHub issues" data-canonical-src="https://img.shields.io/github/issues/themefisher/dot-hugo-documentation-theme.svg" style="max-width:100%;"></a>
-<a href="/themefisher/dot-hugo-documentation-theme/blob/master"><img src="https://camo.githubusercontent.com/5cb0da6a96f0f7b4861202b46486e3b36f813831/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d636c6f7365642d7261772f7468656d656669736865722f646f742d6875676f2d646f63756d656e746174696f6e2d7468656d652e7376673f6d61784167653d32353932303030" alt="GitHub issues closed" data-canonical-src="https://img.shields.io/github/issues-closed-raw/themefisher/dot-hugo-documentation-theme.svg?maxAge=2592000" style="max-width:100%;"></a>
-<a href="https://github.com/themefisher/dot-hugo-documentation-theme/network"><img src="https://camo.githubusercontent.com/a740e4878301293eb179787617f3335fe6b7dbe6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f7468656d656669736865722f646f742d6875676f2d646f63756d656e746174696f6e2d7468656d652e737667" alt="GitHub forks" data-canonical-src="https://img.shields.io/github/forks/themefisher/dot-hugo-documentation-theme.svg" style="max-width:100%;"></a></p>
+![screenshot](https://raw.githubusercontent.com/budparr/gohugo-theme-ananke/master/images/screenshot.png)
 
-<img src="https://user-images.githubusercontent.com/37659754/54081086-cc7ce200-4328-11e9-9f7d-74d9b32fa68c.gif" alt="screenshot" width="100%">
+[DEMO](https://gohugo-ananke-theme-demo.netlify.com/)
 
-</div>
+Features
 
-Dot, a responsive and feature reach documentation theme ever build in hugo eco system . We have analysised a lot of documentation and knowledge base theme to come up with this design . The readability and the cleaness is also another key feature of this theme. 
+- Responsive
+- Accessible
+- Contact form
+- Custom Robots.txt (changes values based on environment)
+- Internal templates for meta data, google analytics, and DISQUS or COMMENTO comments
+- RSS Discovery
+- Table of Contents (must declare `toc: true` in post parameter)
+- Stackbit configuration ([Stackbit](https://www.stackbit.com))
+
+Also includes examples of Hugo Features or Functions:
+
+- Pagination (internal template)
+- Taxonomies
+- Archetypes
+- Custom shortcode
+- Related content
+- Hugo built-in menu
+- i18n
+- `with`
+- `HUGO_ENV`
+- `first`
+- `after`
+- `sort`
+- Site LanguageCode
+- `where`
+- Content Views
+- Partials
+- Template layouts (type "post" uses a special list template, single template, and a content view)
+- Tags
+- `len`
+- Conditionals
+- `ge` (greater than or equal to)
+- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/spf13/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
 
 
-### What's New in version 2.0
-This template is now in a new layout. You can create page with folder, and also gives required images in this folder. Multilangual is now more fun. No more bugs and issues. It's all like a new experience. Configuration of this theme is now more easier.
+This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](http://tachyons.io/).
 
-**Version 2.0 comes with MIT Licence**
 
-## Table of Contents
-
-- [Demo](#demo)
-- [Installation](#installation)
-- [Main Features](#main-features)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions-(paid))
-- [More Hugo Themes](https://themefisher.com/hugo-themes/)
-
-## Demo
-
-| Elements  | FAQ  | Inner Page  | Contact  |
-|---|---|---|---|
-| ![Elements page](https://user-images.githubusercontent.com/37659754/54081094-e1f20c00-4328-11e9-90e8-eeda5e3cb427.png) | ![FAQ page](https://user-images.githubusercontent.com/37659754/54081095-e1f20c00-4328-11e9-8009-24987d98e2d0.png) | ![Inner page](https://user-images.githubusercontent.com/37659754/54081096-e28aa280-4328-11e9-97d2-6eb94da191ca.png) | ![Contact page](https://user-images.githubusercontent.com/37659754/54081093-e1597580-4328-11e9-981b-859b1a7e94d9.png) |
-
-**The images are only for demonstration purpose, Please don't use those images.**
-
-[Live Demo](http://demo.themefisher.com/dot-hugo/).
 
 ## Installation
 
-Navigate to your themes folder in your Hugo site and use the following commands:
+### As a Hugo Module (recommended)
+
+> ⚠️ If you installed a [Hugo binary](https://gohugo.io/getting-started/installing/#binary-cross-platform), you may not have Go installed on your machine. To check if Go is installed:
+> ```
+> $ go version
+> ```
+>  Go modules were considered production ready in v1.14. [Download Go](https://golang.org/dl/). 
+
+1. From your project's root directory, initiate the hugo module system if you haven't already:
+
+   ```
+   $ hugo mod init github.com/<your_user>/<your_project>
+   ```
+
+2. Add the theme's repo to your `config.toml`:
+
+   ```toml
+   theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+   ```
+
+### As Git Submodule
+
+Inside the folder of your Hugo site run:
 
 ```
-$ mkdir themes
-$ cd themes
-$ git clone git@github.com:themefisher/dot-hugo-documentation-theme.git
+$ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
-Or Check out [Full Documentation](https://docs.gethugothemes.com/dot/?ref=github).
-
-## Main features
-
-- Automatic Search
-- Search Suggestion
-- Syntax highlighting
-- Multilingual mode
-- Bootstrap 4 Powered
-- Google Analytics 
-- Color Scheme
-- Next/Prev buttons in single post page
-- Contact Page , Faq Page
-- Buttons, Tip/Note/Info/Warning boxes, Expand
-- Responsive Ready
-
-## Reporting Issues or Contributing
-We use GitHub Issues as the official bug tracker for the Navigator Template. Please Search [existing issues](https://github.com/themefisher/dot-hugo-documentation-theme/issues). It’s possible someone has already reported the same problem.
-If your problem or idea is not addressed yet, [open a new issue](https://github.com/themefisher/dot-hugo-documentation-theme/issues)
-
-Contributions are welcome and we will review and consider pull requests.
-Primary goals are:
-- Keep it simple.
-- Keep minimal (or zero) default configuration.
-- Avoid interference with user-defined layouts.
-- Avoid using JS if it can be solved by CSS.
-
-## Technical Support or Questions (Paid)
-
-If you have questions or need help integrating the product please [contact us](mailto:mehedi@themefisher.com) instead of opening an issue.
-
-## Hire Us
-We are available for Hiring of your next HUGO project. Drop Us a mail [mehedi@themefisher.com](mailto:mehedi@themefisher.com)
+For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
 
-## Premium Themes
 
-| [![Mega-Bundle-HUGO](https://gethugothemes.com/wp-content/uploads/edd/2019/09/Mega-Bundle-HUGO.png)](https://themefisher.com/products/hugo-mega-bundle/) | [![GoDocs](https://gethugothemes.com/wp-content/uploads/edd/2020/02/Home-Page-2.png)](https://gethugothemes.com/products/godocs-hugo-documentation-theme/) | [![Academia](https://gethugothemes.com/wp-content/uploads/edd/2019/08/Academia.jpg)](https://gethugothemes.com/products/academia/) |
-|:---:|:---:|:---:|
-| **Hugo Mega Bundle**  | **GoDocs**  | **Academia**  |
+## Getting started
+
+After installing the theme successfully it requires a just a few more steps to get your site running.
+
+
+### The config file
+
+Take a look inside the [`exampleSite`](https://github.com/theNewDynamic/gohugo-theme-ananke/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
+
+You may need to delete the line: `themesDir = "../.."`
+
+
+### Add comments
+
+To enable comments, add following to your config file:
+
+- DISQUS: `disqusShortname = YOURSHORTNAME`
+- COMMENTO:
+  ```
+  [params]
+    commentoEnable = true
+  ```
+
+### Change the hero background
+
+For any page or post you can add a featured image by including the local path in front matter (see content in the `exampleSite/content/_readme.md` file for examples): `featured_image: '/images/gohugo-default-sample-hero-image.jpg'`
+
+If you would like to hide the header text on the featured image on a page, set `omit_header_text` to `true`. See `exampleSite/content/contact.md` for an example.
+
+You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file. Choose a background color from any on the [Tachyons](http://tachyons.io/docs/themes/skins/) library site, and preface it with "bg-"
+
+example: `background_color_class = "bg-blue"` or `background_color_class = "bg-gray"`
+
+
+
+### Activate the contact form
+
+This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
+
+```
+{{< form-contact action="https://formspree.io/your@email.com" >}}
+```
+
+### Update font or body classes
+
+The theme is set, by default, to use a near-white background color and the "Avenir" or serif typeface. You can change these in your config file with the `body_classes` parameter, like this:
+
+```
+[params]
+  body_classes = "avenir bg-near-white"
+```
+
+which will give you a body class like this:
+
+```
+<body class="avenir bg-near-white">
+```
+
+note: The `body_classes` parameter will not change the font used in post content. To do this, you must use the `post_content_classes` parameter.
+
+You can find a list of available typefaces [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_font-family.css).
+
+And a list of background colors [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_skins.css#L96).
+
+
+_n.b. in future versions we will likely separate the typeface and other body classes._
+
+
+### Custom CSS
+
+You can override the built-in css by using your own. Just put your own css files in the `static` directory of your website (the one in the theme directory also works but is not recommended) and modify the `custom_css` parameter in your config file. The path referenced in the parameter should be relative to the `static` folder. These css files will be added through the `header` partial after the built-in css file.
+
+For example, if your css files are `static/css/custom.css` and `static/css/custom2.css` then add the following to the config file:
+
+```
+    [params]
+      custom_css = ["css/custom.css","css/custom2.css"]
+```
+
+### Processed CSS
+
+By default, Ananke will read a preprocessed stylesheet from `/assets/ananke/dist/main.[hash].css`. If you want to have Hugo process the stylesheet for you thus allowing better customisation using Hugo's unison file system, you need to:
+
+1. From the root of your project: `$ hugo mod npm pack`.  
+This will generate a `package.json` for your project, or append the npm packages required by the theme to your existing `package.json`.
+2. Still from the root of your project: `$ npm install`
+3. Set the following site Parameter to true:
+
+```
+    [params]
+      ananke_process_css = true
+```
+
+You're all set an can run Hugo.
+
+#### Overwrite some imported file
+
+To have your own `_code.css` imported and processed by the theme. Add `/assets/ananke/css/_code.css` to your project.
+
+#### Add a new import
+
+Create your own `/assets/ananke/css/` directory at the root of your project, drop your files in there, and create your own `/main.css` with your own import statements. Don't forget to include the existing import statement from the theme's own `main.css`.
+
+### Show Reading Time and Word Count
+
+If you add a key of `show_reading_time` true to either the Config Params, a page or section's front matter, articles will show the reading time and word count.
+
+
+### Adding Scripts to the Page Head
+
+Some scripts need to be added within the page head. To add your own scripts to the page head, simply insert them into the `head-additions.html` partial located in the `layouts/partials` folder.
+
+
+### Logo
+
+You can replace the title of your site in the top left corner of each page with your own logo. To do that put your own logo into the `static` directory of your website, and add the `site_logo` parameter to the site params in your config file. For example:
+
+```
+[params]
+  site_logo = "img/logo.svg"
+```
+
+
+### Nearly finished
+
+In order to see your site in action, run Hugo's built-in local server.
+
+`$ hugo server`
+
+Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your browser.
+
+## Production
+
+To run in production (e.g. to have Google Analytics show up), run `HUGO_ENV=production` before your build command. For example:
+
+```
+HUGO_ENV=production hugo
+```
+
+Note: The above command will not work on Windows. If you are running a Windows OS, use the below command:
+
+```
+set HUGO_ENV=production
+hugo
+```
+
+## Contributing
+
+If you find a bug or have an idea for a feature, feel free to use the [issue tracker](https://github.com/theNewDynamic/gohugo-theme-ananke/issues) to let me know.
+
+
+
+
+TODO:
+
+- fix hard-coded link to [section](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/layouts/index.html#L32)
